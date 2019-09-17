@@ -1,24 +1,33 @@
 import React from "react";
+import styles from "./styles.module.css";
+
+type CompletionCellProps = {
+  completed?: boolean;
+};
 
 type CompletionGridProps = {
   completedCount: number;
   totalCount: number;
 };
 
+const CompletionCell: React.FC<CompletionCellProps> = ({ completed }) => (
+  <div>{completed ? "!" : "?"}</div>
+);
+
 export const CompletionGrid: React.FC<CompletionGridProps> = ({
   completedCount,
   totalCount
 }) => (
-  <div>
+  <div className={styles.grid}>
     {Array(completedCount)
       .fill(0)
       .map((_, i) => (
-        <div key={i} />
+        <CompletionCell completed key={i} />
       ))}
     {Array(totalCount - completedCount)
       .fill(0)
       .map((_, i) => (
-        <div key={i} />
+        <CompletionCell key={i} />
       ))}
   </div>
 );

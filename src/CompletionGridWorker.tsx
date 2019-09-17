@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useList } from "react-use";
 import { CompletionGrid } from "./CompletionGrid";
-import Worker from "./worker.worker";
 
-// @ts-ignore
-const worker = new Worker();
+type CompletionGridWorkerProps = {
+  worker: Worker;
+};
 
-const CompletionGridWorker: React.FC = () => {
+const CompletionGridWorker: React.FC<CompletionGridWorkerProps> = ({
+  worker
+}) => {
   const [completedCount, updateCount] = useState(0);
 
   useEffect(() => {
-    worker.onmessage = (e: any) => {
-      updateCount(completedCount + 1);
-    };
+    worker.onmessage = () =>
+      updateCount((completedCount: number) => completedCount + 1);
     worker.postMessage("start");
-  }, [0]);
+  }, [worker]);
+
+  console.log(completedCount);
 
   return <CompletionGrid completedCount={completedCount} totalCount={100} />;
 };
