@@ -6,12 +6,19 @@ import "./App.css";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <CompletionGridNormal />
-        <CompletionGridGPGPU />
-      </header>
-    </div>
+    <header className="root">
+      <h1>Demo</h1>
+      <div className="demo-container">
+        <div className="grid-wrapper">
+          <h2>Vanilla Javascript</h2>
+          <CompletionGridNormal />
+        </div>
+        <div className="grid-wrapper">
+          <h2>Uses the GPU</h2>
+          <CompletionGridGPGPU />
+        </div>
+      </div>
+    </header>
   );
 };
 

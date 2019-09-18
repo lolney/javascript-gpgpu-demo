@@ -17,8 +17,6 @@ const CompletionGridWorker: React.FC<CompletionGridWorkerProps> = ({
     worker.postMessage("start");
   }, [worker]);
 
-  console.log(completedCount);
-
   return <CompletionGrid completedCount={completedCount} totalCount={100} />;
 };
 
