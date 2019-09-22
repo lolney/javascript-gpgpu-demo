@@ -8,11 +8,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/javascript-gpgpu-demo/fb2bf3f7558605f272d4.worker.js"
   },
   {
-    "revision": "969029161fae9fcc7975278dddc3dc43",
+    "revision": "b8ec25e3f30dfcd5cc7d5b09062b098a",
     "url": "/javascript-gpgpu-demo/index.html"
   },
   {
-    "revision": "dbe412c4062ddcd45523",
+    "revision": "e0af68f7bdbc25c83de4",
     "url": "/javascript-gpgpu-demo/static/css/main.76e48093.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/javascript-gpgpu-demo/static/js/2.6dee5416.chunk.js"
   },
   {
-    "revision": "dbe412c4062ddcd45523",
-    "url": "/javascript-gpgpu-demo/static/js/main.c0326de5.chunk.js"
+    "revision": "e0af68f7bdbc25c83de4",
+    "url": "/javascript-gpgpu-demo/static/js/main.d4c1ecfa.chunk.js"
   },
   {
     "revision": "f16922654bd413185c8a",
