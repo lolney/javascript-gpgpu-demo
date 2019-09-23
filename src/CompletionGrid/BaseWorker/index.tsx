@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { useList } from "react-use";
+import React, { useEffect, useState } from "react";
 import { CompletionGrid } from "../Base";
 
 type CompletionGridWorkerProps = {

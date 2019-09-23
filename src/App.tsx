@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import CompletionGrid from "./CompletionGrid/BaseWorker";
 import GpuWorker from './workers/gpuworker.worker';
 import VanillaWorker from './workers/worker.worker';
-import logo from "./logo.svg";
 import "./App.css";
 
 const App: React.FC = () => {
