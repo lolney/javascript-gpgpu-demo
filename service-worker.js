@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/javascript-gpgpu-demo/precache-manifest.9c2915e92ed9c5acdf8613ba3f12a75e.js"
+  "/javascript-gpgpu-demo/precache-manifest.d10804e2b5350f7b6a3b4ec72adb4469.js"
 );
 
 self.addEventListener('message', (event) => {

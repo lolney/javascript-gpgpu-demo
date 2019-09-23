@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="shortcut icon" href="/javascript-gpgpu-demo/favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><meta name="description" content="A visual performance comparison for GPU.js vs vanilla Javascript"><link rel="apple-touch-icon" href="logo192.png"><link rel="manifest" href="/javascript-gpgpu-demo/manifest.json"><title>GPU.js demo</title><link href="/javascript-gpgpu-demo/static/css/main.76e48093.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>/******/ (function(modules) { // webpackBootstrap
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
 /******/ 		var chunkIds = data[0];
@@ -152,4 +152,4 @@
 /******/ })
 /************************************************************************/
 /******/ ([]);
-//# sourceMappingURL=runtime~main.d890ef04.js.map</script><script src="/javascript-gpgpu-demo/static/js/2.ac6623d8.chunk.js"></script><script src="/javascript-gpgpu-demo/static/js/main.8e2926c8.chunk.js"></script></body></html>
+//# sourceMappingURL=runtime~main.d890ef04.js.map
