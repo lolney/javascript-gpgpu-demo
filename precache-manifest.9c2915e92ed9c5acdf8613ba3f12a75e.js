@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/javascript-gpgpu-demo/934a84457606f8dec993.worker.js"
   },
   {
-    "revision": "89faaa177bb90e07a372c0efa0375d41",
+    "revision": "688f4d14b560e7120c96278903f1df3e",
     "url": "/javascript-gpgpu-demo/index.html"
   },
   {
