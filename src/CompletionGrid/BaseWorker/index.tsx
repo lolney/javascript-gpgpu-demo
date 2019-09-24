@@ -19,15 +19,15 @@ const CompletionGridWorker: React.FC<CompletionGridWorkerProps> = ({
     if(isStarted && !worker) {
       // @ts-ignore
       const worker = new Worker();
+      updateCount(0);
       worker.postMessage("start");
       setWorker(worker);
     }
     else if(!isStarted && worker) {
       worker.terminate();
       setWorker(undefined);
-      updateCount(0);
     }
-  }, [worker, isStarted]);
+  }, [Worker, worker, isStarted]);
 
   useEffect(() => {
     if(worker) worker.onmessage = () =>
@@ -37,7 +37,7 @@ const CompletionGridWorker: React.FC<CompletionGridWorkerProps> = ({
   useEffect(() => {
     if (completedCount === 100)
       setDone();
-  }, [completedCount]);
+  }, [setDone, completedCount]);
 
 
   return <CompletionGrid completedCount={completedCount} totalCount={100} />;

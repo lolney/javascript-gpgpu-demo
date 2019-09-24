@@ -2,7 +2,7 @@ import { GPU } from "gpu.js";
 import workload from '../workloads/gpuMultiply';
 
 const ctx: Worker = self as any;
-const n = 50000;
+const n = 5000;
 const n_2 = n;
 
 const gpu = new GPU();
@@ -18,7 +18,7 @@ ctx.addEventListener("message", event => {
   Array(100)
     .fill(0)
     .forEach((_, i) => {
-      console.log(doWork(input));
+      doWork(input);
       ctx.postMessage("message");
     });
 });
