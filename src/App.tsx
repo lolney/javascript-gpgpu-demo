@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import CompletionGrid from "./CompletionGrid/BaseWorker";
 import GpuWorker from './workers/gpuworker.worker';
 import VanillaWorker from './workers/worker.worker';
@@ -7,18 +7,21 @@ import "./App.css";
 const App: React.FC = () => {
   const [isStarted, setIsStarted] = useState(false);
   const [workersCompleted, setWorkersCompleted] = useState(0);
-  const start = () => {
+
+  const start = useCallback(() => {
     setIsStarted(true);
     setWorkersCompleted(0);
-  }
-  const stop = () => {
+  }, []);
+
+  const stop = useCallback(() => {
     setIsStarted(false);
     setWorkersCompleted(0);
-  }
-  const setDone = () => {
+  }, []);
+  
+  const setDone = useCallback(() => {
     if(workersCompleted === 1) stop();
     else setWorkersCompleted(state => state + 1);
-  }
+  }, []);
 
   return (
     <header className="root">
