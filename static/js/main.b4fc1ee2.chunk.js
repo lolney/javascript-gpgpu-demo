@@ -14,7 +14,7 @@ module.exports = {"grid":"styles_grid__1Zp-5"};
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = function() {
-  return new Worker(__webpack_require__.p + "13f138e84d943dd2e02c.worker.js");
+  return new Worker(__webpack_require__.p + "44772e41092b0ad8ac79.worker.js");
 };
 
 /***/ }),
@@ -74,10 +74,10 @@ var styles_module = __webpack_require__(4);
 var styles_module_default = /*#__PURE__*/__webpack_require__.n(styles_module);
 
 // CONCATENATED MODULE: ./src/CompletionGrid/Base/index.tsx
-var Base_CompletionCell=function CompletionCell(_ref){var completed=_ref.completed;return react_default.a.createElement("div",null,completed?"!":"?");};var Base_CompletionGrid=function CompletionGrid(_ref2){var completedCount=_ref2.completedCount,totalCount=_ref2.totalCount;return react_default.a.createElement("div",{className:styles_module_default.a.grid},Array(completedCount).fill(0).map(function(_,i){return react_default.a.createElement(Base_CompletionCell,{completed:true,key:i});}),Array(totalCount-completedCount).fill(0).map(function(_,i){return react_default.a.createElement(Base_CompletionCell,{key:i});}));};
+var Base_CompletionCell=function CompletionCell(_ref){var completed=_ref.completed;return react_default.a.createElement("div",{style:{color:completed?'green':'white'}},completed?"✔":"❓");};var Base_CompletionGrid=function CompletionGrid(_ref2){var completedCount=_ref2.completedCount,totalCount=_ref2.totalCount;return react_default.a.createElement("div",{className:styles_module_default.a.grid},Array(completedCount).fill(0).map(function(_,i){return react_default.a.createElement(Base_CompletionCell,{completed:true,key:i});}),Array(totalCount-completedCount).fill(0).map(function(_,i){return react_default.a.createElement(Base_CompletionCell,{key:i});}));};
 // CONCATENATED MODULE: ./src/CompletionGrid/BaseWorker/index.tsx
 var BaseWorker_CompletionGridWorker=function CompletionGridWorker(_ref){var isStarted=_ref.isStarted,setDone=_ref.setDone,Worker=_ref.Worker;var _useState=Object(react["useState"])(0),_useState2=Object(slicedToArray["a" /* default */])(_useState,2),completedCount=_useState2[0],updateCount=_useState2[1];var _useState3=Object(react["useState"])(),_useState4=Object(slicedToArray["a" /* default */])(_useState3,2),worker=_useState4[0],setWorker=_useState4[1];Object(react["useEffect"])(function(){if(isStarted&&!worker){// @ts-ignore
-var _worker=new Worker();_worker.postMessage("start");setWorker(_worker);}else if(!isStarted&&worker){worker.terminate();setWorker(undefined);updateCount(0);}},[worker,isStarted]);Object(react["useEffect"])(function(){if(worker)worker.onmessage=function(){return updateCount(function(completedCount){return completedCount+1;});};},[worker]);Object(react["useEffect"])(function(){if(completedCount===100)setDone();},[completedCount]);return react_default.a.createElement(Base_CompletionGrid,{completedCount:completedCount,totalCount:100});};/* harmony default export */ var BaseWorker = (BaseWorker_CompletionGridWorker);
+var _worker=new Worker();updateCount(0);_worker.postMessage("start");setWorker(_worker);}else if(!isStarted&&worker){worker.terminate();setWorker(undefined);}},[Worker,worker,isStarted]);Object(react["useEffect"])(function(){if(worker)worker.onmessage=function(){return updateCount(function(completedCount){return completedCount+1;});};},[worker]);Object(react["useEffect"])(function(){if(completedCount===100)setDone();},[setDone,completedCount]);return react_default.a.createElement(Base_CompletionGrid,{completedCount:completedCount,totalCount:100});};/* harmony default export */ var BaseWorker = (BaseWorker_CompletionGridWorker);
 // EXTERNAL MODULE: ./src/workers/gpuworker.worker.ts
 var gpuworker_worker = __webpack_require__(5);
 var gpuworker_worker_default = /*#__PURE__*/__webpack_require__.n(gpuworker_worker);
@@ -90,7 +90,7 @@ var worker_worker_default = /*#__PURE__*/__webpack_require__.n(worker_worker);
 var src_App = __webpack_require__(13);
 
 // CONCATENATED MODULE: ./src/App.tsx
-var App_App=function App(){var _useState=Object(react["useState"])(false),_useState2=Object(slicedToArray["a" /* default */])(_useState,2),isStarted=_useState2[0],setIsStarted=_useState2[1];var _useState3=Object(react["useState"])(0),_useState4=Object(slicedToArray["a" /* default */])(_useState3,2),workersCompleted=_useState4[0],setWorkersCompleted=_useState4[1];var start=function start(){setIsStarted(true);setWorkersCompleted(0);};var stop=function stop(){setIsStarted(false);setWorkersCompleted(0);};var setDone=function setDone(){if(workersCompleted===1)stop();else setWorkersCompleted(function(state){return state+1;});};return react_default.a.createElement("header",{className:"root"},react_default.a.createElement("h1",null,"Demo"),react_default.a.createElement("button",{onClick:isStarted?stop:start},isStarted?"Stop":"Start"),react_default.a.createElement("div",{className:"demo-container"},react_default.a.createElement("div",{className:"grid-wrapper"},react_default.a.createElement("h2",null,"Vanilla Javascript"),react_default.a.createElement(BaseWorker,{isStarted:isStarted,setDone:setDone,Worker:worker_worker_default.a})),react_default.a.createElement("div",{className:"grid-wrapper"},react_default.a.createElement("h2",null,"Uses the GPU"),react_default.a.createElement(BaseWorker,{isStarted:isStarted,setDone:setDone,Worker:gpuworker_worker_default.a}))));};/* harmony default export */ var src_App_0 = (App_App);
+var App_App=function App(){var _useState=Object(react["useState"])(false),_useState2=Object(slicedToArray["a" /* default */])(_useState,2),isStarted=_useState2[0],setIsStarted=_useState2[1];var _useState3=Object(react["useState"])(0),_useState4=Object(slicedToArray["a" /* default */])(_useState3,2),workersCompleted=_useState4[0],setWorkersCompleted=_useState4[1];var start=Object(react["useCallback"])(function(){setIsStarted(true);setWorkersCompleted(0);},[]);var stop=Object(react["useCallback"])(function(){setIsStarted(false);setWorkersCompleted(0);},[]);var setDone=Object(react["useCallback"])(function(){if(workersCompleted===1)stop();else setWorkersCompleted(function(state){return state+1;});},[]);return react_default.a.createElement("header",{className:"root"},react_default.a.createElement("h1",null,"Demo"),react_default.a.createElement("button",{onClick:isStarted?stop:start},isStarted?"Stop":"Start"),react_default.a.createElement("div",{className:"demo-container"},react_default.a.createElement("div",{className:"grid-wrapper"},react_default.a.createElement("h2",null,"Vanilla Javascript"),react_default.a.createElement(BaseWorker,{isStarted:isStarted,setDone:setDone,Worker:worker_worker_default.a})),react_default.a.createElement("div",{className:"grid-wrapper"},react_default.a.createElement("h2",null,"Uses the GPU"),react_default.a.createElement(BaseWorker,{isStarted:isStarted,setDone:setDone,Worker:gpuworker_worker_default.a}))));};/* harmony default export */ var src_App_0 = (App_App);
 // CONCATENATED MODULE: ./src/serviceWorker.ts
 // This optional code is used to register a service worker.
 // register() is not called by default.
@@ -132,4 +132,4 @@ unregister();
 
 /***/ })
 ],[[7,1,2]]]);
-//# sourceMappingURL=main.8e2926c8.chunk.js.map
+//# sourceMappingURL=main.b4fc1ee2.chunk.js.map

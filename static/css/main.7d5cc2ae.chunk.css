@@ -30,7 +30,9 @@ code {
 }
 
 button {
+  background-color: white;
   font-size: 0.8em;
+  font-family: inherit;
   width: 100px;
   height: 40px;
   border-radius: 3px;
@@ -77,4 +79,4 @@ button {
 }
 
 
-/*# sourceMappingURL=main.76e48093.chunk.css.map*/
+/*# sourceMappingURL=main.7d5cc2ae.chunk.css.map*/
