@@ -1,5 +1,5 @@
 import { GPU } from "gpu.js";
-import workload from '../workloads/gpuMultiply';
+import workload from "../workloads/gpuMultiply";
 
 const ctx: Worker = self as any;
 const n = 5000;
@@ -18,7 +18,7 @@ ctx.addEventListener("message", event => {
   Array(100)
     .fill(0)
     .forEach((_, i) => {
-      doWork(input);
+      const result = doWork(input);
       ctx.postMessage("message");
     });
 });
