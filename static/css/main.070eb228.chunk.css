@@ -14,13 +14,14 @@ code {
 
 .styles_grid__1Zp-5 {
   display: grid;
-  grid-template-columns: repeat(10, 3.2vw);
+  grid-template-columns: repeat(10, 4.5vh);
+  grid-template-rows: repeat(10, 4.5vh);
 }
 
 .root {
   align-items: center;
-  background-color: #282c34;
-  color: white;
+  background-color: white;
+  color: #48a8f5;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
@@ -56,27 +57,14 @@ button {
   width: 40%;
 }
 
-@-webkit-keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+@media (max-aspect-ratio: 4/3) {
+  .demo-container {
+    flex-direction: column;
   }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  .grid-wrapper {
+    width: 100%;
   }
 }
 
 
-/*# sourceMappingURL=main.7d5cc2ae.chunk.css.map*/
+/*# sourceMappingURL=main.070eb228.chunk.css.map*/

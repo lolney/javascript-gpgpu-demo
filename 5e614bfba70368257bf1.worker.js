@@ -35381,11 +35381,10 @@ __webpack_require__.r(__webpack_exports__);
 var src = __webpack_require__(64);
 
 // CONCATENATED MODULE: ./src/workloads/gpuMultiply.ts
-function gpuMultiply(input){var accumulator=0;for(var i=1;i<=5000;i++){// @ts-ignore
-accumulator+=(input[this.thread.x]+1)/i;}return accumulator;};
+var gpuMultiply=function gpuMultiply(input){var accumulator=0;for(var i=1;i<=5000;i++){accumulator+=(input[this.thread.x]+1)/i;}return accumulator;};/* harmony default export */ var workloads_gpuMultiply = (gpuMultiply);
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--7-oneOf-1!./node_modules/eslint-loader??ref--6-0!./src/workers/gpuworker.worker.ts
-var ctx=self;var n=5000;var n_2=n;var gpu=new src["GPU"]();var doWork=gpu.createKernel(gpuMultiply).setImmutable(true).setPipeline(true).setOutput([n]);var input=new Array(n_2).fill(1).map(function(){return Math.random();});ctx.addEventListener("message",function(event){Array(100).fill(0).forEach(function(_,i){doWork(input);ctx.postMessage("message");});});/* harmony default export */ var gpuworker_worker = __webpack_exports__["default"] = (ctx);
+var ctx=self;var n=5000;var n_2=n;var gpu=new src["GPU"]();var doWork=gpu.createKernel(workloads_gpuMultiply).setImmutable(true).setPipeline(true).setOutput([n]);var input=new Array(n_2).fill(1).map(function(){return Math.random();});ctx.addEventListener("message",function(event){Array(100).fill(0).forEach(function(_,i){var result=doWork(input);ctx.postMessage("message");});});/* harmony default export */ var gpuworker_worker = __webpack_exports__["default"] = (ctx);
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=44772e41092b0ad8ac79.worker.js.map
+//# sourceMappingURL=5e614bfba70368257bf1.worker.js.map
