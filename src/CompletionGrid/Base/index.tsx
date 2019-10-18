@@ -11,7 +11,7 @@ type CompletionGridProps = {
 };
 
 const CompletionCell: React.FC<CompletionCellProps> = ({ completed }) => (
-  <div>{completed ? "✔" : "❓"}</div>
+  <div style={{color: completed ? 'green' : 'red'}}>{completed ? "✔" : "❓"}</div>
 );
 
 export const CompletionGrid: React.FC<CompletionGridProps> = ({

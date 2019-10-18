@@ -4,8 +4,11 @@ import { CompletionGrid } from "../Base";
 type CompletionGridWorkerProps = {
   isStarted: boolean;
   setDone: () => void,
-  Worker: Worker;
+  Worker: Worker
 };
+
+// worker-loader typings are incorrect; should be this
+type WorkerConstructor = new () => Worker;
 
 const CompletionGridWorker: React.FC<CompletionGridWorkerProps> = ({
   isStarted,
@@ -17,8 +20,7 @@ const CompletionGridWorker: React.FC<CompletionGridWorkerProps> = ({
 
   useEffect(() => {
     if(isStarted && !worker) {
-      // @ts-ignore
-      const worker = new Worker();
+      const worker = new (Worker as any as WorkerConstructor)();
       updateCount(0);
       worker.postMessage("start");
       setWorker(worker);
