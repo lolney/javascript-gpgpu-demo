@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import CompletionGrid from "./CompletionGrid/BaseWorker";
 import GpuWorker from './workers/gpuworker.worker';
 import VanillaWorker from './workers/worker.worker';
@@ -19,9 +19,13 @@ const App: React.FC = () => {
   }, []);
   
   const setDone = useCallback(() => {
-    if(workersCompleted === 1) stop();
-    else setWorkersCompleted(state => state + 1);
+    setWorkersCompleted(state => state + 1);
   }, []);
+
+  useEffect(() => {
+    if(workersCompleted == 2)
+      stop();
+  }, [stop, workersCompleted]);
 
   return (
     <header className="root">
